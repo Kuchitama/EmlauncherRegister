@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'emlauncher/register/command'
+
+Emlauncher::Register::Command.run(ARGV)
+

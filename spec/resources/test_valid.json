@@ -1,0 +1,10 @@
+{
+  "db" : {
+    "host" : "localhost",
+    "username" : "username",
+    "password" :  "password",
+    "database" : "emlauncher",
+    "encoding" : "utf8"
+  },
+  "address_filters" : ["hoge", "fuga"]
+}

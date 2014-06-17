@@ -1,0 +1,14 @@
+{
+   "emlauncher" : {
+     "host" : "localhost",
+     "is_secure" : false
+   },
+   "db" : {
+    "host" : "localhost",
+    "username" : "emlauncher",
+    "database" : "emlauncher",
+    "password" : "xxxxxxxx",
+    "encoding" : "utf8"
+  },
+  "address_filters" : ["furyu.jp"]
+}

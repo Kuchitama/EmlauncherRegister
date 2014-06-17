@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>EMLauncherRegister</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <section>
+    <h1>Register mail for EMLauncher</h1>
+      <p>
+        EMLauncherに登録したいメールアドレスを入力してください。<br>
+        EMLauncherからパスワードリセットのメールが届くので、
+        メール内のリンクからパスワードの設定をしてください。
+      </p>
+      <form method="post" action="./register" role="form">
+        <div class="form-group">
+          <label for="mail-input" class="control-label">Mail</label>
+          <input type="email" name="mail" value="" id="mail-input" class="form-control" placeholder="Enter email">
+        </div>
+        <div>
+          <input type="submit" value="登録" class="btn btn-primary">
+          <input type="reset" value="取消" class="btn btn-default">
+        </div>
+      </form>
+    </section>
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
