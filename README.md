@@ -20,12 +20,12 @@ SecurityGroupでアクセス制限を行う前提での実装となっていま�
 
 ## Installation
 
-1. Download gem from [here](#TODO)
+1. Download gem from [here](https://github.com/Kuchitama/EmlauncherRegister/releases/)
 2. install gem
 
     gem install emlaucher-register.1.0.0.gem
 
-3. put json file of your configuration. you can copy and edit from [this](#TODO).
+3. put json file of your configuration. you can copy and edit from [this](https://raw.githubusercontent.com/Kuchitama/EmlauncherRegister/master/config.json.sample).
 
 4. run command below.
 
