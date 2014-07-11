@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Kuchitama/EmlauncherRegister.png)](https://travis-ci.org/Kuchitama/EmlauncherRegister)
+
 # EmlauncherRegister
 
 This gem is Web Application to register mail and password for [EMLauncher](https://github.com/KLab/emlauncher).
