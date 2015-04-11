@@ -18,3 +18,4 @@ tmp
 application.log
 config.ru
 config.json
+.DS_Store
