@@ -15,7 +15,11 @@ expected =
           :database => 'emlauncher',
           :encoding => 'utf8'
         },
-        :address_filters => ["hoge", "fuga"]
+        :address_filters => ["hoge", "fuga"],
+        :admins => [
+          # TODO シンボルをキーに出来るように config.rbを修正
+          {"username" => "admin_name", "password" => "admin_pass"}
+        ]
       }
 
 describe Config do

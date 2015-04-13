@@ -10,5 +10,11 @@
     "password" : "xxxxxxxx",
     "encoding" : "utf8"
   },
-  "address_filters" : ["furyu.jp"]
+  "address_filters" : ["furyu.jp"],
+  "admins" : [
+    {
+      "username" : "username",
+      "password" : "password"
+    }
+  ]
 }

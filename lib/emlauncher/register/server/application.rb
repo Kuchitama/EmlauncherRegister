@@ -53,6 +53,36 @@ module Emlauncher
           eruby.result()
         end
         
+        # Basic認証
+        helpers do
+          def authenticate!
+            unless authorized?
+              response['WWW-Authenticate'] = %(Basic realm="Restricted Area")
+              throw(:halt, [401, "Not authorized\n"])
+            end
+          end
+          def authorized?
+            @auth ||=  Rack::Auth::Basic::Request.new(request.env)
+            if @auth.provided? && @auth.basic? && @auth.credentials then
+              return @config[:admins].any?{|admin| @auth.credentials == [admin["username"], admin["password"]]}
+            else 
+              return false
+            end
+          end
+        end
+        
+        get '/users' do
+          authenticate!
+          
+          "Welcome to a secret page, #{@auth.credentials[0]}, #{@auth.credentials[1]}!"
+        end
+        
+        get '/logout' do 
+            throw(:halt, [401, "Logouted\n"])
+        end
+
+
+        
         def initialize(conf_path = nil)       
           @views_path = File.expand_path(File.join(File.dirname(__FILE__), 'views'))
           @config = Emlauncher::Register::Server::Config::get(conf_path)

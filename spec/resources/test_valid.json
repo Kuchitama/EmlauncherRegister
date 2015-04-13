@@ -6,5 +6,8 @@
     "database" : "emlauncher",
     "encoding" : "utf8"
   },
-  "address_filters" : ["hoge", "fuga"]
+  "address_filters" : ["hoge", "fuga"],
+  "admins" : [
+    { "username" : "admin_name", "password" : "admin_pass"}
+  ]
 }
