@@ -74,7 +74,8 @@ module Emlauncher
         get '/users' do
           authenticate!
           
-          "Welcome to a secret page, #{@auth.credentials[0]}, #{@auth.credentials[1]}!"
+          eruby = Erubis::Eruby.new(File.read(File.join(@views_path, 'users.html.eruby')))
+          eruby.result(:mails => @user_pass.select_all )
         end
         
         get '/logout' do 
