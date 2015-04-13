@@ -55,6 +55,12 @@ SecurityGroupでアクセス制限を行う前提での実装となっていま�
 
 5. browse https://localhost:8080/ from web browser
 
+#### Run spec
+
+1. run below rake command
+
+    rake spec
+
 
 ## Usage
 
