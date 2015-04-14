@@ -16,10 +16,14 @@
     <h1>Registered mails for EMLauncher</h1>
     <ul class="mails_list">
       <% for mail in mails %>
-      <li class="mail"><%= mail %></li>
+      <li class="mail"><%= mail %><span>:<a href="/users/delete?mail=<%= mail %>">削除</a></span></li>
       <% end %>
     </ul>
     </section>
+    
+    <div class="footer">
+      <a href="/logout">logout</a>
+    </div>
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

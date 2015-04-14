@@ -10,7 +10,8 @@ module Emlauncher
         # conf hash of db configuration
         def initialize(conf = {})
           @insert_sql = "INSERT INTO user_pass(mail, passhash) values (?, '');"
-          @select_mail = "SELECT up.mail mail from user_pass up;"
+          @select_mail = "SELECT up.mail mail FROM user_pass up;"
+          @delete_sql = "DELETE FROM user_pass up where up.mail = ?;"
           
           @conf = {
             :host => 'localhost',
@@ -44,6 +45,12 @@ module Emlauncher
             result.map do |row|
               row["mail"]
             end
+          end
+        end
+        
+        def delete!(mail)
+          use_client do |client|
+            result = client.xquery(@delete_sql, mail)
           end
         end
       end

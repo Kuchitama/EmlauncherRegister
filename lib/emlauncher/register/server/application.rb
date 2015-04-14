@@ -31,7 +31,7 @@ module Emlauncher
             end
             Emlauncher::Register::Log::LOGGER.info("posted mail: #{mail}")
             #sql実行
-            @user_pass.insert(mail)
+            @user_pass.insert!(mail)
             
             # passwd forgetの呼び出し
             @mail_request.requestToSendPassRefreshPass(mail)
@@ -76,6 +76,21 @@ module Emlauncher
           
           eruby = Erubis::Eruby.new(File.read(File.join(@views_path, 'users.html.eruby')))
           eruby.result(:mails => @user_pass.select_all )
+        end
+        
+        get '/users/delete' do
+          authenticate!
+          
+          @mail = params['mail']
+          @user_pass.delete!(@mail)
+          
+          redirect '/users/deleted'
+        end
+        
+        get '/users/deleted' do
+          authenticate!
+          
+          "finish to delete mail. <a href='/users'>戻る</a>"
         end
         
         get '/logout' do 
