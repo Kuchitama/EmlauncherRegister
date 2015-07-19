@@ -11,7 +11,7 @@ module Emlauncher
         def initialize(conf = {})
           @insert_sql = "INSERT INTO user_pass(mail, passhash) values (?, '');"
           @select_mail = "SELECT up.mail mail FROM user_pass up;"
-          @delete_sql = "DELETE FROM user_pass up where up.mail = ?;"
+          @delete_sql = "DELETE FROM user_pass WHERE user_pass.mail = ?;"
           
           @conf = {
             :host => 'localhost',
@@ -25,12 +25,6 @@ module Emlauncher
           Emlauncher::Register::Log::LOGGER.info("db conf: #{@conf}")
 
 
-        end
-        
-        def self.use_client
-          client = Mysql2::Client.new(@conf)
-          Emlauncher::Register::Log::LOGGER.debug("client: #{client}")
-          yield client
         end
         
         def insert(mail)
@@ -50,9 +44,17 @@ module Emlauncher
         
         def delete!(mail)
           use_client do |client|
-            result = client.xquery(@delete_sql, mail)
+            client.xquery(@delete_sql, mail)
           end
         end
+        
+        private
+        def use_client
+          client = Mysql2::Client.new(@conf)
+          Emlauncher::Register::Log::LOGGER.debug("client: #{client}")
+          yield client
+        end
+        
       end
     end
   end
