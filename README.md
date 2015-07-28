@@ -96,6 +96,17 @@ type: Object
 field : `address_filters`
 type: List of String
 
+### Administrator Settings
+
+field : `admins`
+type: List of Admin Object
+
+#### Admin Object 
+
+|Fields|Require|Type|Value|
+|------|:-----:|----|-----|
+|username | Yes | String | admin's username. |
+|password| Yes | String | admin's password.(plain text) |
 
 #### Sample of Json
 The json below is default EMlaucher settings.
@@ -112,9 +123,34 @@ The json below is default EMlaucher settings.
     "database" : "emlauncher",
     "password" : "xxxxxxxx",
   },
-  "address_filters" : ["furyu.jp"]
+  "address_filters" : ["furyu.jp"],
+  "admins" : [
+    {
+      "username" : "username",
+      "password" : "password"
+    }
+  ]
+
 }
 ```
+
+## Administrator
+
+Admins can manage users.
+
+### Console
+
+
+Admins can browse https://localhost:8080/users from web browser.
+The page needs to pass  basic auth.
+Admin must input username and password which written in config.json.
+
+### Delete users
+
+Console page shows users mail list and delete button.
+Admins can delete users this button.
+**carefully! Only one click to delete.**
+
 
 ## Contributing
 
