@@ -143,12 +143,14 @@ Admins can manage users.
 
 Admins can browse https://localhost:8080/users from web browser.
 The page needs to pass  basic auth.
+
 Admin must input username and password which written in config.json.
 
 ### Delete users
 
 Console page shows users mail list and delete button.
 Admins can delete users this button.
+
 **carefully! Only one click to delete.**
 
 
